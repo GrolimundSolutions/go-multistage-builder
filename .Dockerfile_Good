@@ -6,7 +6,7 @@ RUN mkdir /user && \
 RUN apk --no-cache add ca-certificates
 
 # Build app binary for final stage
-FROM golang:1.14.2-alpine3.11 AS builder
+FROM golang:1.17.8-alpine3.15 AS builder
 WORKDIR /app
 COPY . .
 RUN go mod download
