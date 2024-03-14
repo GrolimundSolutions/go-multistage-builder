@@ -1,0 +1,16 @@
+### Create User
+POST http://localhost:8080/v1/user HTTP/1.1
+content-type: application/json
+
+{
+    "ID": "123",
+    "Name": "John Doe",
+    "Email": "john.doe@example.com"
+}
+
+
+### Get User
+GET http://localhost:8080/v1/user/* HTTP/1.1
+content-type: application/json
+
+
