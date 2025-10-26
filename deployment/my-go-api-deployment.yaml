@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-go-api
+spec:
+  replicas: 6
+  selector:
+    matchLabels:
+      app: my-go-api
+  template:
+    metadata:
+      labels:
+        app: my-go-api
+    spec:
+      containers:
+      - name: my-go-api
+        image: grolimundachim/my-go-api:latest
+        ports:
+        - containerPort: 8080
+        env:
+        - name: GIN_MODE
+          value: "release"
+        resources:
+          limits:
+            cpu: "20m"
+            memory: "512Mi"
+          requests:
+            cpu: "10m"
+            memory: "128Mi"
